@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AJ | Portfolio</title>
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Google Font -->
@@ -20,12 +20,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top my-navbar">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="#">AJ</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu"
+      aria-controls="navMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -34,18 +42,16 @@
   </div>
 </nav>
 
-<!-- Hero / MC -->
+<!-- Hero -->
 <section class="MC text-center">
-  <div class="container">
-    <img src="AJJ.png" alt="AJ profile photo" class="profile-img">
-    <h1>Hello, I’m AJ</h1>
-    
-  </div>
+  <img src="AJJ.png" alt="AJ profile photo" class="profile-img">
+  <h1>Hello, I’m AJ</h1>
 </section>
+
 
 <!-- About -->
 <section id="about" class="section text-center">
-  <div class="glass mx-auto about-container" style="max-width:650px;">
+  <div class="glass">
     <h2>About Me</h2>
     <p>
       Hello! I’m AJ, a curious and motivated student with a strong interest in technology. 
@@ -60,47 +66,63 @@
   </div>
 </section>
 
-
-
+<!-- Education -->
+<section id="education" class="section text-center">
+  <div class="glass">
+    <h2>Education</h2>
+    <div class="mt-4">
+      <div class="education-card glass mb-3">
+        <h5>Bachelor of Science in Information Technology</h5>
+        <p class="mb-1"><strong>Northern Bukidnon State College</strong></p>
+        <small>2020 – 2026</small>
+      </div>
+      <div class="education-card glass mb-3">
+        <h5>TVL–ICT Strand</h5>
+        <p class="mb-1"><strong>Manolo Fortich National High School</strong></p>
+        <small>2014 – 2020</small>
+      </div>
+      <div class="education-card glass">
+        <h5>Elementary</h5>
+        <p class="mb-1"><strong>Manolo Fortich National High School</strong></p>
+        <small>2008 – 2014</small>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Skills -->
 <section id="skills" class="section text-center">
-  <div class="glass mx-auto" style="max-width:700px;">
+  <div class="glass">
     <h2>Skills</h2>
-
     <div class="skills-grid mt-4">
-      <div class="skill-card glass">Hardware – Understanding of basic troubleshooting procedures</div>
-      <div class="skill-card glass">Multimedia – Knowledge of layout, design, and media tools</div>
-      <div class="skill-card glass">Programming – Introduction to logic and simple interactions</div>
-      <div class="skill-card glass">Networking – Familiar with basic networking concepts</div>
+      <div class="skill-card glass">Hardware – Basic troubleshooting</div>
+      <div class="skill-card glass">Multimedia – Layout & design</div>
+      <div class="skill-card glass">Programming – Basic logic</div>
+      <div class="skill-card glass">Networking – Basic concepts</div>
     </div>
   </div>
 </section>
 
 <!-- Projects -->
 <section id="projects" class="section text-center">
-  <div class="glass mx-auto" style="max-width:700px;">
+  <div class="glass">
     <h2>Projects</h2>
-
     <div class="projects-grid mt-4">
       <div class="project-card glass">
         <h5>Simple Portfolio</h5>
-        <p>Basic calculator and personal portfolio website.</p>
+        <p>Calculator and portfolio website.</p>
       </div>
-
       <div class="project-card glass">
         <h5>Ukay-Ukay Store</h5>
-        <p>Online ordering system with GIS integration.</p>
+        <p>Online ordering with GIS integration.</p>
       </div>
-
       <div class="project-card glass">
         <h5>Simple CRUD</h5>
-        <p>CRUD application using HTML, CSS, and JavaScript.</p>
+        <p>HTML, CSS, and JavaScript CRUD app.</p>
       </div>
-
       <div class="project-card glass">
         <h5>PC Reservation App</h5>
-        <p>PC reservation system built with Ionic React.</p>
+        <p>Ionic React reservation system.</p>
       </div>
     </div>
   </div>
@@ -108,7 +130,7 @@
 
 <!-- Contact -->
 <section id="contact" class="section text-center">
-  <div class="glass mx-auto contact-container" style="max-width:500px;">
+  <div class="glass">
     <h2>Contact</h2>
     <p>Email: andriejose2001@email.com</p>
     <p>Phone: 0928-813-4312</p>
@@ -117,9 +139,19 @@
 
 <!-- Footer -->
 <footer class="footer text-center">
+  <p class="footer-quote">"To be brave means to know something is scary and to do it anyway." — Thorfinn</p>
   <p>© <span id="year"></span> andriejose2001</p>
+  <div class="social-links mt-2">
+    <span class="social-link me-3">GitHub</span>
+    <span class="social-link me-3">LinkedIn</span>
+    <span class="social-link">Twitter</span>
+  </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
